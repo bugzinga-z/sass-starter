@@ -66,9 +66,22 @@ Posso creare un comando in package.json per il watch:
 
 e avvio con `npm run watch` o con yarn se uso questo package manager.
 
-# Alternativa 2: Live Sass Compiler per VSCode
+# Alternativa 2: Sass e Parcel
+
+Puoi installare il package `sass` e `parcel-bundler` come `devDependencies` e avere come script:
+
+```json
+"dev": "parcel src/index.html",
+"build": "parcel build src/index.html"
+```
+
+Posso lanciare il comando `sass` con `sass --watch src/scss:dist:css` che è abbastanza comprensibile, no? 😃
+
+# Alternativa 3: Live Sass Compiler per VSCode
 
 Installa l'estensione `Live Sass Compiler` di Ritwick Dey e apri i settaggi cercando live sass compiler e apriamo il file settings.json, a questo punto troviamo le impostazioni `liveSassCompile.settings.formats`. Qui impostiamo il save path come preferiamo.
+
+Sempre per fare tutto da VSCode installa Live Server.
 
 # GitIgnore
 
@@ -87,7 +100,7 @@ dist/
 Avrai un file `style.scss` o `main.scss` che importa i vari fogli di stile sass con `@use`:
 
 ```scss
-@use 'abstract';
+@use 'abstracts';
 @use 'base';
 @use 'utilities';
 @use 'components';
@@ -99,11 +112,27 @@ Nei `components` ci vado ad inserire i fogli di stile per i buttons, label, nav,
 In `layout` ci inserisco le mie pagine come home, index, about, contact, courses, ecc...
 I file `scss` all'interno di queste folder cominceranno sempre con un `_`: `_buttons.scss`.
 
+Solitamente il pattern 7-1 per l'organizzazione dei file è una raccomandazione che deve essere modellata a seconda delle proprie esigenze e specifiche del progetto. Esempio, spesso non gestiamo i temi e pertanto sarà inutile avere una folder `themes`, oppure può capitare di volere unire le folder `layout` e `pages` in un'unica folder `layout`. Se non usiamo css di terze parti non abbiamo la folder `vendor`, ma se abbiamo solo il file di reset di terze parti spesso lo mettiamo nel base.
 
-# Video
+# Pillole SASS
 
-https://www.youtube.com/watch?v=o4cECvhrBo8
-https://www.youtube.com/watch?v=BEdCOvJ5RY4
-https://www.youtube.com/watch?v=cM6UQxF9PSA
+```scss
+@each $color, $shades in $colors {
+  @each $shade, $value in $shades {
+    --clr-#{$color}-#{$shade}: #{$value};
+  }
+}
+```
 
-https://www.youtube.com/kepowob/videos
+Questo codice prende i valori in colors, quindi avrò per ogni colore una gamma di shades, pertanto avrò un secondo ciclo che per ogni shade prende il valore. Uso l'interpolazione di stringa, simile a quella di JavaScript `${variabile}` qui ho `#{$variabile}`.
+
+# Scrivere codice HTML velocemente
+
+Esempio: `.features-point*3>img+h3+p`
+# Link utili
+
+* https://www.youtube.com/watch?v=o4cECvhrBo8
+* https://www.youtube.com/watch?v=BEdCOvJ5RY4
+* https://www.youtube.com/watch?v=cM6UQxF9PSA
+* https://www.youtube.com/kepowob/videos
+* https://www.freecodecamp.org/news/html-best-practices/
