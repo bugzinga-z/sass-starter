@@ -1,0 +1,21 @@
+@use 'typography' as *;
+
+html {
+  @include font($font-normal, $font-stack);
+  line-height: 1.6;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  color: var(--clr-article-100);
+  background-color: var(--clr-primary-500);
+}
+
+a {
+  color: var(--clr-article-100);
+}
+
+#firma {
+  @include font($font-light, $font-sign, var(--fs-400));
+}

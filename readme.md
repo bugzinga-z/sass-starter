@@ -1,3 +1,10 @@
+# SASS Starter Kit
+
+Questo starter kit usa:
+
+- reset css per normalizzare il foglio di stile (alternativa normalize [qui](https://necolas.github.io/normalize.css/8.0.1/normalize.css)).
+- Font Family Roboto e Square Peg per la firma al footer
+- Font Awesome 6.x
 # Guida per il package.json in SASS
 
 Vedi la guida [qui](https://thinkdobecreate.com/articles/minimum-static-site-sass-setup/) per avere tutte le dipendenze. Cambia le `dependencies` in `devDependencies`.
@@ -131,8 +138,21 @@ Questo codice prende i valori in colors, quindi avrò per ogni colore una gamma 
 Esempio: `.features-point*3>img+h3+p`
 # Link utili
 
+Video:
+
 * https://www.youtube.com/watch?v=o4cECvhrBo8
 * https://www.youtube.com/watch?v=BEdCOvJ5RY4
 * https://www.youtube.com/watch?v=cM6UQxF9PSA
 * https://www.youtube.com/kepowob/videos
+
+
+Use and forward:
+
+Con use possiamo introdurre i namespace per prevenire collisioni di nomi. Il forward mi permette di includere più file a cascata, f1 -> f2 che a sua volta fa il forward di f3 e f4, in questo modo f3 e f4 saranno disponibili in f1.
+
+* https://css-tricks.com/introducing-sass-modules/#:~:text=The%20new%20%40use%20is%20similar,considered%20private%2C%20and%20not%20imported.
+* https://dev.to/ibreakcodes/use-forward-in-sass-2bab
+
+Best Practices:
+
 * https://www.freecodecamp.org/news/html-best-practices/

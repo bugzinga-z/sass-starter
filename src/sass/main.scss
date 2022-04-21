@@ -1,46 +1,6 @@
-@forward "base/reset";
-@use "base/colors" as *;
-@use "base/type-scale" as *;
-@use "base/media-query" as *;
 
-:root {
-  @each $color, $shades in $colors {
-    @each $shade, $value in $shades {
-      --clr-#{$color}-#{$shade}: #{$value};
-    }
-  }
+@forward "base";
+@forward "abstracts";
+@forward "utilities";
 
-  @each $screen-size, $font-size in $type-scale {
-    @if $screen-size == small {
-      @each $size, $value in $font-size {
-        --fs-#{$size}: #{$value};
-      }
-    } @else {
-      @include mq(small) {
-        @each $size, $value in $font-size {
-          --fs-#{$size}: #{$value};
-        }
-      }
-    }
-  }
-}
 
-@each $color, $shades in $colors {
-  @each $shade, $value in $shades {
-    .text-#{$color}-#{$shade} {
-      color: $value;
-    }
-    .bg-#{$color}-#{$shade} {
-      color: $value;
-    }
-  }
-}
-
-body {
-  color: var(--clr-article-100);
-  background-color: var(--clr-primary-500);
-}
-
-a {
-  color: var(--clr-article-100);
-}

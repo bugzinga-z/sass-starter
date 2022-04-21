@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700;900&family=Square+Peg&display=swap');
+
+$font-stack: 'Roboto', sans-serif;
+
+$font-sign: 'Square Peg', cursive;
+
+$font-light: 100;
+$font-normal: 400;
+$font-bold: 700;
+$font-black: 900;
+
+@mixin font($weight, $font-family, $font-size: inherit) {
+  font-family: $font-family;
+  font-weight: $weight;
+  font-size: $font-size;
+}

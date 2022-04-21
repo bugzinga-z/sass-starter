@@ -1,7 +1,4 @@
-$breakpoints: (
-  small: 40em,
-  medium: 65em
-);
+@use 'breakpoints' as *;
 
 @mixin mq($key) {
   $size: map-get($breakpoints, $key);
